@@ -31,12 +31,13 @@
         <a href="#solucao" class="sidebar-link"><span class="link-num">3</span> Nossa Solução</a>
         <a href="#processo" class="sidebar-link"><span class="link-num">4</span> Como Funciona</a>
         <a href="#diferenciais" class="sidebar-link"><span class="link-num">5</span> Diferenciais</a>
+        <a href="#calculadora" class="sidebar-link"><span class="link-num">6</span> Calculadora</a>
     </div>
     <div class="sidebar-section">
         <div class="sidebar-section-title">Fechamento</div>
-        <a href="#objecoes" class="sidebar-link"><span class="link-num">6</span> Quebra de Objeções</a>
-        <a href="#regras" class="sidebar-link"><span class="link-num">7</span> Regras de Ouro</a>
-        <a href="#checklist" class="sidebar-link"><span class="link-num">8</span> Checklist</a>
+        <a href="#objecoes" class="sidebar-link"><span class="link-num">7</span> Quebra de Objeções</a>
+        <a href="#regras" class="sidebar-link"><span class="link-num">8</span> Regras de Ouro</a>
+        <a href="#checklist" class="sidebar-link"><span class="link-num">9</span> Checklist</a>
     </div>
 </nav>
 
@@ -329,10 +330,103 @@
         </div>
     </section>
 
-    <!-- 6. OBJEÇÕES -->
+    <!-- 6. CALCULADORA BDR -->
+    <section class="guide-section calc-section" id="calculadora">
+        <div class="container">
+            <div class="section-label" data-anim><div class="label-icon">6</div> FERRAMENTA</div>
+            <h2 data-anim>Calculadora de <span class="text-gradient">Créditos</span></h2>
+            <p data-anim>Use esta ferramenta durante a apresentação para mostrar ao cliente uma estimativa de quanto ele pode recuperar.</p>
+
+            <div class="calc-wrapper" data-anim data-delay="100">
+                <div class="calc-input-panel">
+                    <div class="calc-panel-header">
+                        <div class="calc-panel-icon">🧮</div>
+                        <div>
+                            <h3>Dados do Cliente</h3>
+                            <span class="calc-panel-sub">Preencha para simular</span>
+                        </div>
+                    </div>
+
+                    <!-- Revenue Input -->
+                    <div class="calc-field">
+                        <label>Faturamento Médio</label>
+                        <div class="calc-toggle-group">
+                            <button class="calc-toggle-btn active" data-calc-rev="monthly" id="calcRevMonthly">Mensal</button>
+                            <button class="calc-toggle-btn" data-calc-rev="annual" id="calcRevAnnual">Anual</button>
+                        </div>
+                        <div class="calc-input-wrapper">
+                            <span class="calc-currency">R$</span>
+                            <input type="text" id="calcRevenue" class="calc-input" placeholder="0,00" inputmode="numeric">
+                        </div>
+                    </div>
+
+                    <!-- Duration Input -->
+                    <div class="calc-field">
+                        <label>Tempo no Simples Nacional</label>
+                        <div class="calc-toggle-group">
+                            <button class="calc-toggle-btn active" data-calc-dur="months" id="calcDurMonths">Meses</button>
+                            <button class="calc-toggle-btn" data-calc-dur="years" id="calcDurYears">Anos</button>
+                        </div>
+                        <div class="calc-input-wrapper">
+                            <span class="calc-input-icon">📅</span>
+                            <input type="number" id="calcDuration" class="calc-input" placeholder="60" min="1" max="600">
+                        </div>
+                        <span class="calc-hint">Máximo considerado: 60 meses (5 anos)</span>
+                    </div>
+
+                    <button class="calc-btn" id="calcBtn">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="9" cy="9" r="6" stroke="currentColor" stroke-width="2"/><path d="M14 14l4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+                        <span>Calcular Estimativa</span>
+                    </button>
+                </div>
+
+                <div class="calc-result-panel" id="calcResultPanel">
+                    <div class="calc-placeholder" id="calcPlaceholder">
+                        <div class="calc-placeholder-icon">📊</div>
+                        <p>Preencha os dados e clique em <strong>"Calcular Estimativa"</strong> para ver o resultado.</p>
+                    </div>
+                    <div class="calc-result-content" id="calcResultContent" style="display:none;">
+                        <div class="calc-result-badge">✅ Estimativa calculada</div>
+                        <div class="calc-result-label">Crédito estimado a recuperar</div>
+                        <div class="calc-result-range">
+                            <div class="calc-range-item calc-range-min">
+                                <span class="calc-range-tag">Mínimo</span>
+                                <span class="calc-range-value" id="calcMin">R$ 0</span>
+                            </div>
+                            <span class="calc-range-sep">até</span>
+                            <div class="calc-range-item calc-range-max">
+                                <span class="calc-range-tag">Máximo</span>
+                                <span class="calc-range-value" id="calcMax">R$ 0</span>
+                            </div>
+                        </div>
+                        <div class="calc-result-details">
+                            <div class="calc-detail-row">
+                                <span>Faturamento total no período</span>
+                                <span id="calcTotalRev">R$ 0</span>
+                            </div>
+                            <div class="calc-detail-row">
+                                <span>Base de cálculo (60%)</span>
+                                <span id="calcBase">R$ 0</span>
+                            </div>
+                            <div class="calc-detail-row">
+                                <span>Período considerado</span>
+                                <span id="calcPeriod">0 meses</span>
+                            </div>
+                        </div>
+                        <div class="calc-result-tip">
+                            💡 <em>Use esses valores como referência durante a apresentação. A análise real pode identificar valores diferentes.</em>
+                        </div>
+                        <button class="calc-reset-btn" id="calcResetBtn">🔄 Nova simulação</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. OBJEÇÕES -->
     <section class="guide-section" id="objecoes">
         <div class="container">
-            <div class="section-label" data-anim><div class="label-icon">6</div> PASSO 6</div>
+            <div class="section-label" data-anim><div class="label-icon">7</div> PASSO 7</div>
             <h2 data-anim>Quebra de Objeções</h2>
             <p data-anim>As objeções mais comuns e como respondê-las com segurança.</p>
             <div class="objections-list" data-anim data-delay="100">
@@ -367,7 +461,7 @@
     <!-- 7. REGRAS DE OURO -->
     <section class="guide-section" id="regras">
         <div class="container">
-            <div class="section-label" data-anim><div class="label-icon">7</div> PASSO 7</div>
+            <div class="section-label" data-anim><div class="label-icon">8</div> PASSO 8</div>
             <h2 data-anim>Regras de Ouro do BDR</h2>
             <div class="rules-grid" data-anim data-delay="100">
                 <div class="rule-card"><div class="rule-num">01</div><h4>🎯 Ouça mais, fale menos</h4><p>Faça perguntas e deixe o cliente falar. Quanto mais ele fala, mais informação você tem para personalizar a abordagem.</p></div>
@@ -383,7 +477,7 @@
     <!-- 8. CHECKLIST -->
     <section class="guide-section" id="checklist">
         <div class="container">
-            <div class="section-label" data-anim><div class="label-icon">8</div> PASSO 8</div>
+            <div class="section-label" data-anim><div class="label-icon">9</div> PASSO 9</div>
             <h2 data-anim>Checklist Pré-Apresentação</h2>
             <p data-anim>Marque cada item antes de entrar em contato com o cliente.</p>
             <div class="checklist" data-anim data-delay="100">
